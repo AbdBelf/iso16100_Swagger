@@ -1,0 +1,31 @@
+<div ng-controller='MainCtrl'">
+	
+	<div class="jumbotron">
+		<h4>Select Capability Profile</h4>
+		<input type="file" on-read-file="showContent($fileContent)" />
+	</div>
+	
+	<div class="row">
+			
+		    
+		<div class="col-lg-6"  style="float: left;">
+		    <div  ng-if="content" style="width: 560px;">
+		        <h4>Capability Profile</h4>
+		        <pre>{{ content }}</pre>
+		    </div>
+		</div>
+		
+		<div class="col-lg-6" style="float: right;">
+			<div ng-if="content" style="width: 560px;">
+				<h4>Swagger specification</h4>
+				<pre>{{ swaggerContent }}</pre>
+			</div>
+		</div>
+		
+	</div>
+	
+	
+    
+   
+
+</div>
