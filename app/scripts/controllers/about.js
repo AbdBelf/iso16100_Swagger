@@ -9,9 +9,12 @@
  */
 angular.module('iso16100PocApp')
   .controller('AboutCtrl', function () {
-    this.awesomeThings = [
+  
+	  $("#mainContainer").removeClass( "container" );
+	  this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+    
   });

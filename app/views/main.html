@@ -1,31 +1,34 @@
-<div ng-controller='MainCtrl'">
+<div ng-controller='MainCtrl' class="container">
 	
 	<div class="jumbotron">
 		<h4>Select Capability Profile</h4>
-		<input type="file" on-read-file="showContent($fileContent)" />
+		<input type = "file" file-model = "myFile" on-read-file="showContent($fileContent)"/>
+		<div  ng-if="myFile">
+			<button type="button" class="btn btn-sm btn-info" ng-click="uploadFile()">Parse</button>
+	    </div>
 	</div>
 	
-	<div class="row">
+	<span ng-if="swaggerContent"  style="">
+		<a ng-click="createYamlFile()" type="txt/plain" style="float:right;" type="button" class="btn btn-sm btn-success">Download API Specification</a>
+	</span>
 			
-		    
-		<div class="col-lg-6"  style="float: left;">
-		    <div  ng-if="content" style="width: 560px;">
-		        <h4>Capability Profile</h4>
-		        <pre>{{ content }}</pre>
-		    </div>
+	<div class="row" style="padding-top: 50px;">
+
+		<div ng-if="content" style="width: 560px;float: left;">
+			<h4>Capability Profile</h4>    
+			<pre class="prettyprint linenums  col-lg-6"  style="width: 560px;">
+				{{content}}
+			</pre>
 		</div>
-		
-		<div class="col-lg-6" style="float: right;">
-			<div ng-if="content" style="width: 560px;">
-				<h4>Swagger specification</h4>
-				<pre>{{ swaggerContent }}</pre>
-			</div>
+
+		<div ng-if="swaggerContent" style="width: 560px;float: right;">
+			<h4 style="width: 180px;">Swagger specification</h4>
+			
+			<pre class="prettyprint col-lg-6" style="width: 560px;">
+				{{swaggerContent}}
+			</pre>
 		</div>
-		
-	</div>
-	
-	
-    
+	</div>    
    
 
 </div>
