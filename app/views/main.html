@@ -1,7 +1,7 @@
 <div ng-controller='MainCtrl' class="container">
 	
 	<div class="jumbotron">
-		<h4>Select Capability Profile</h4>
+		<h4>Select ISO 16100 Capability Profile</h4>
 		<input type = "file" file-model = "myFile" on-read-file="showContent($fileContent)"/>
 		<div  ng-if="myFile">
 			<button type="button" class="btn btn-sm btn-info" ng-click="uploadFile()">Parse</button>
@@ -12,18 +12,19 @@
 		<a ng-click="createYamlFile()" type="txt/plain" style="float:right;" type="button" class="btn btn-sm btn-success">Download API Specification</a>
 	</span>
 			
-	<div class="row" style="padding-top: 50px;">
+	<div class="row wb-prettify" style="padding-top: 50px;">
 
 		<div ng-if="content" style="width: 560px;float: left;">
 			<h4>Capability Profile</h4>    
-			<pre class="prettyprint linenums  col-lg-6"  style="width: 560px;">
+			<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+			<pre id="xmlContent" class="prettyprint col-lg-6"  style="width: 560px;">
 				{{content}}
 			</pre>
 		</div>
 
 		<div ng-if="swaggerContent" style="width: 560px;float: right;">
-			<h4 style="width: 180px;">Swagger specification</h4>
-			
+			<h4 style="width: 200px;">Open API specification</h4>
+			<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 			<pre class="prettyprint col-lg-6" style="width: 560px;">
 				{{swaggerContent}}
 			</pre>

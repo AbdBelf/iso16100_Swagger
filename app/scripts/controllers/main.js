@@ -114,6 +114,7 @@ angular.module('iso16100PocApp').directive('onReadFile', function ($parse) {
 				};
 
 				reader.readAsText((onChangeEvent.srcElement || onChangeEvent.target).files[0]);
+
 			});
 		}
 	};
